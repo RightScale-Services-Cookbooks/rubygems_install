@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: rsc_skeleton_cookbook
+# Cookbook Name:: rubygems_install
 # Recipe:: default
 #
 # Copyright (C) 2014 RightScale Inc
@@ -16,3 +16,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+case node[:rubygems_install][:install_type]
+when "package"
+  include_recipe "rubygems_install::package"
+when "source"
+  include_recipe "rubygems_install::source"
+end
