@@ -16,6 +16,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+include_recipe "ruby::default"
 case node[:rubygems_install][:install_type]
 when "package"
   include_recipe "rubygems_install::package"
